@@ -8,14 +8,14 @@ ENV RABBITMQ_HOME=/opt/rabbitmq/ \
     PATH=/opt/rabbitmq/sbin/:$PATH \
     TIMEZONE=Europe/Warsaw
 
-RUN apk -X http://dl-4.alpinelinux.org/alpine/edge/testing --update add erlang \
-    erlang-sasl \
+RUN apk -X http://dl-4.alpinelinux.org/alpine/edge/testing --update add erlang17 \
+    erlang17-sasl \
     openssl \
-    erlang-os-mon \
-    erlang-mnesia \
-    erlang-eldap \
-    erlang-inets \
-    erlang-xmerl\
+    erlang17-os-mon \
+    erlang17-mnesia \
+    erlang17-eldap \
+    erlang17-inets \
+    erlang17-xmerl\
     tzdata && \
     mkdir -p /opt/rabbitmq && \
     wget -O /tmp/rabbitmq.tar.gz https://www.rabbitmq.com/releases/rabbitmq-server/v${RABBITMQ_VERSION}/rabbitmq-server-generic-unix-${RABBITMQ_VERSION}.tar.gz && \
