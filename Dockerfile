@@ -19,7 +19,7 @@ RUN apk -X http://dl-4.alpinelinux.org/alpine/edge/testing --update add erlang \
     && wget -O /tmp/rabbitmq.tar.gz https://www.rabbitmq.com/releases/rabbitmq-server/v${RABBITMQ_VERSION}/rabbitmq-server-generic-unix-${RABBITMQ_VERSION}.tar.gz \
     && tar -C /tmp -xvzf /tmp/rabbitmq.tar.gz \
     && mv /tmp/rabbitmq_server-${RABBITMQ_VERSION}/* /opt/rabbitmq \
-    && rm -rf /tmp/rabbitmq.tar.gz /tmp/rabbitmq_server-${RABBITMQ_VERSION}
+    && rm -rf /tmp/rabbitmq.tar.gz /tmp/rabbitmq_server-${RABBITMQ_VERSION} /var/cache/apk/*
 
 EXPOSE 5672 12345 15671
 
